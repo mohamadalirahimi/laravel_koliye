@@ -20,8 +20,8 @@ class CreateSupportsTable extends Migration
             $table->Increments('id');
             $table->string('helper');
             $table->string('typeofhelp');
-            $table->integer('amount');
-            $table->integer('date');
+            $table->integer('amount')->nullable();
+            $table->date('date');
             $table->integer('patient_id') ->unsigned();
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
 

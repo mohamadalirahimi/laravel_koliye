@@ -74,7 +74,7 @@
                                 placeholder="نوع بیماری"
                                 aria-label="نوع بیماری"
                                 <option value="دیالیز خونی">دیالیز خونی</option>
-                                <option value="دیتایز">دیتایز</option>
+                                <option value="دیتایز">دیالیز</option>
                                 <option value="پیوند">پیوند</option>
                                 <input type="text" ng-model="insurance" class="form-control"
                                        placeholder="سایر"
