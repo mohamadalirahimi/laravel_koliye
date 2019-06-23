@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col">
             <div class="card min-h-400">
-                <div class="card-header text-center">
+                <div class="card-header text-center"  style="background-color: #ededed !important;">
                     ثبت کمک ها
 
                 </div>
