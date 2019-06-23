@@ -46,6 +46,12 @@
                             <p>نمایش کمک ها</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="changeTab('lettersTab')" href="#">
+                            <i class="fas fa-hands-helping" style='font-size:21px'></i>
+                            <p>نامه ها</p>
+                        </a>
+                    </li>
 
                 </ul>
             </nav>

@@ -24,6 +24,7 @@ app.controller('MainController', function ($scope) {
         'editTab': false,
         'supportTab': false,
         'showsupportTab': false,
+        'lettersTab':false,
     };
     $scope.changeTab = function (tab) {
         angular.forEach($scope.tabs, function (key, value) {
@@ -187,7 +188,34 @@ app.controller('RecordController', function ($scope, $http) {
     };
 });
 
+app.controller('LettersController',function ($scope,$http) {
+    $scope.text = '';
+    $scope.shomare = '';
+    $scope.title = '';
+    $scope.date = '';
+    // $scope.patient_id = '';
+    $scope.res = '';
+    $scope.supports='';
+    $scope.submit = function () {
+        $http.post("http://localhost:8000/api/letters", {
+            text: $scope.text,
+            shomare: $scope.shomare,
+            title: $scope.title,
+            date: $scope.date,
+            // patient_id: $scope.patient_id
+        })
+            .then(
+                function successCallback(response) {
+                    $scope.res = (response.data);
+                    console.log($scope.res)
 
+                },
+                function errorCallback(response) {
+                    console.log( response.data );
+                }
+            );
+    };
+});
 
 app.controller('SupportController', function ($scope, $http) {
     $scope.helper = '';
