@@ -1,3 +1,4 @@
+
 <div ng-controller="RecordController">
     <div class="row">
         <div class="col">
@@ -8,17 +9,17 @@
                     <form ng-submit="submit()" class="form-inline" >
                         <div class="input-group mb-3">
                             <h6>نام و نام خانوادگی:  </h6>
-                            <input type="text" ng-model="name" class="form-control"
+                            <input   type="text" ng-model="name" class="form-control"
                                    placeholder="نام و نام خانوادگی">
                         </div>
-                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>نام پدر:</h6>
                             <input type="text" ng-model="fathers_name" class="form-control"
                                    placeholder="نام پدر"
                                    aria-label="نام پدر">
                         </div>
-                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>کد ملی:</h6>
                             <input type="text" ng-model="national_code" class="form-control"
@@ -32,10 +33,10 @@
                                    placeholder="پزشک"
                                    aria-label="پزشک">
                         </div>
-                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>شماره پرونده:</h6>
-                            <input type="text" ng-model="id" class="form-control"
+                            <input type="text" ng-model="id_file" class="form-control"
                                    placeholder="شماره پرونده"
                                    aria-label="شماره پرونده">
                         </div>
@@ -66,7 +67,7 @@
                                    placeholder="سایر"
                                    aria-label="سایر">
                         </div>
-                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>نوع بیماری:</h6>
                             <select ng-model="insurance">
@@ -86,14 +87,15 @@
                             <input type="text" ng-model="date_transplant" class="form-control"
                                    placeholder="تاریخ پیوند"
                                    aria-label="تاریخ پیوند">
-                        </div>&nbsp;&nbsp;&nbsp;
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>بیمارستان پیوند:</h6>
                             <input type="text" ng-model="transplant_hospital" class="form-control"
                                    placeholder="بیمارستان پیوند"
                                    aria-label="بیمارستات پیوند">
                         </div>&nbsp;&nbsp;&nbsp;
-
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>پزشک پیوند:</h6>
                             <input type="text" ng-model="transplant_doctor" class="form-control"
@@ -106,13 +108,15 @@
                             <input type="text" ng-model="drug" class="form-control"
                                    placeholder="دارو های مصرفی"
                                    aria-label="دارو های مصرفی">
-                        </div>&nbsp;&nbsp;&nbsp;
+                        </div>&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>آدرس منزل:</h6>
                             <input type="text" ng-model="home_adres" class="form-control"
                                    placeholder="آدرس منزل"
                                    aria-label="آدرس منزل">
                         </div>&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>آدرس محل کار:</h6>
                             <input type="text" ng-model="work_adres" class="form-control"
@@ -125,13 +129,15 @@
                             <input type="text" ng-model="home_phone" class="form-control"
                                    placeholder="تلفن منزل"
                                    aria-label="تلفن منرل">
-                        </div>&nbsp;&nbsp;&nbsp;
+                        </div>&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>تلفن محل کار:</h6>
                             <input type="text" ng-model="work_phone" class="form-control"
                                    placeholder="تلفن محل کار"
                                    aria-label="تلفن محل کار">
-                        </div>&nbsp;&nbsp;&nbsp;
+                        </div>&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>همراه:</h6>
                             <input type="text" ng-model="cellphone" class="form-control"
@@ -144,13 +150,18 @@
                                    placeholder="تلفن ضروری"
                                    aria-label="تلفن ضروری">
                         </div>&nbsp;&nbsp;&nbsp;
-
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="input-group mb-3">
                             <h6>شماره حساب: </h6>
                             <input type="text" ng-model="account_number" class="form-control"
                                    placeholder="شماره حساب"
                                    aria-label="شماره حساب">
-                        </div>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="submit"
                                     id="button-addon2">ثبت

@@ -18,10 +18,16 @@ class RecordController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request,$id)
+
+    public function search(Request $request)
     {
-        $patient = Patient::where('id', $id);
-        return view("layouts/controller-edit.blade.php");
+        $patientInstance = new Patient();
+        $query = $patientInstance->newQuery();
+        if($request->has('name')){
+            $query->where('name','LIKE','%'.$request->get('name'),'%');
+        }
+        $patients = $query->get();
+        return response()->json($patients, 200);
     }
 
     public function store(Request $request)
@@ -52,10 +58,37 @@ class RecordController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+   /* public function edit($id)
+    {
+        $patient = Patient::find($id);
+        return view("layouts.controller-edit",['patient'=>$patient]);
+    }*/
+    public function edit($id)
+    {
+        $patient=Patient::find($id);
+        return view('layouts.controller-edit',['patient'=>$patient]);
+    }
     public function update(Request $request, $id)
     {
         $patient = Patient::find($id);
         $patient->name =$request->name ;
+        $patient->fathers_name =$request->input('fathers_name') ;
+        $patient->national_code =$request->input('national_code') ;
+        $patient-> doctor=$request->input('doctor') ;
+        $patient->sickness_type =$request->input('sickness_type') ;
+        $patient->insurance_type =$request->input('insurance_type') ;
+        $patient-> insurance=$request->input('insurance') ;
+        $patient->date_transplant =$request->input('date_transplant') ;
+        $patient-> transplant_hospital=$request->input('transplant_hospital') ;
+        $patient->transplant_doctor=$request->input('transplant_doctor') ;
+        $patient->drug =$request->input('drug') ;
+        $patient->home_adres =$request->input('home_adres') ;
+        $patient-> work_adres=$request->input('work_adres') ;
+        $patient-> home_phone=$request->input('home_phone') ;
+        $patient->work_phone =$request->input('work_phone') ;
+        $patient->cellphone =$request->input('cellphone') ;
+        $patient->required_phone =$request->input('required_phone') ;
+        $patient->account_number =$request->input('account_number') ;
         $patient -> save();
         return response()->json(['message'=>'saved successfully'], 200);
 

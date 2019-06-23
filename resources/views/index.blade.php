@@ -36,6 +36,10 @@
                                 <div class="container" ng-if="tabs['showTab'] == true">
                                     @include('layouts/controller-show')
                                 </div>
+                                <div class="container" ng-if="tabs['editTab'] == true">
+                                    @include('layouts/controller-edit')
+                                </div>
+
                                 <div class="container" ng-if="tabs['supportTab'] == true">
                                     @include('layouts/controller-support')
                                 </div>

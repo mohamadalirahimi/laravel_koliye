@@ -15,9 +15,11 @@ use Illuminate\Http\Request;
 
 Route::get('patients', 'RecordController@index');
 Route::get('patients/{id}', 'RecordController@show');
-Route::post('patiens', 'RecordController@store');
+Route::get('patients/{name}', 'RecordController@search');
 
-Route::put('patients/{id}', 'RecordController@update');
+Route::post('patiens', 'RecordController@store');
+Route::put('patients', 'SupportController@update');
+
 Route::delete('patients/{id}', 'RecordController@destroy');
 
 
@@ -25,5 +27,5 @@ Route::delete('patients/{id}', 'RecordController@destroy');
 
 Route::get('supports', 'SupportController@index');
 Route::post('supports', 'SupportController@store');
-
+Route::put('supports', 'SupportController@update');
 Route::delete('supports/{id}', 'SupportController@destroy');

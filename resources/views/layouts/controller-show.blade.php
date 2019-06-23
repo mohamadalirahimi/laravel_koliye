@@ -1,15 +1,27 @@
-<div ng-controller="ShowRecordController">
+<div ng-controller="RecordController">
     <div class="row">
         <div class="col">
             <div class="card min-h-400">
                 <div class="card-header text-center">
                     نمایش بیمار
                 </div>
-                <form ng-submit="showpatient()">
+                <form ng-submit="showData()" style="width: 70%">
                     <div class="input-group mb-3">
-                        <input type="text" ng-model="id" class="form-control"
+                        <input  type="text" ng-model="id" class="form-control"
                                placeholder="َشماره پرونده را وارد کنید"
                                aria-label="شماره پرونده را وارد کنید">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit"
+                                    id="button-addon2">جستجو
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <form ng-submit="showDataname()">
+                    <div class="input-group mb-3" style="width: 70%">
+                        <input type="text" ng-model="name" class="form-control"
+                               placeholder="َنام را وارد کنید"
+                               aria-label="نام را وارد کنید">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="submit"
                                     id="button-addon2">جستجو
@@ -38,7 +50,7 @@
                     <div>تلفن ضروری : @{{required_phone}}</div>
                     <div>شماره حساب : @{{account_number}}</div>
 
-                </div>
+                </div></div>
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="submit"
                             id="button-addon2">ویرایش

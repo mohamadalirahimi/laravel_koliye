@@ -36,13 +36,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" ng-click="changeTab('supportTab')" href="#">
-                            <i class='far fa-plus-square' style='font-size:24px'></i>
+                            <i class='far fa-plus-square' style='font-size:21px'></i>
                             <p>ثبت کمک ها</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" ng-click="changeTab('showsupportTab')" href="#">
-                            <i class='fas fa-heart' style='font-size:24px'></i>
+                            <i class="fas fa-hands-helping" style='font-size:21px'></i>
                             <p>نمایش کمک ها</p>
                         </a>
                     </li>
