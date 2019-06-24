@@ -191,7 +191,6 @@ app.controller('RecordController', function ($scope, $http) {
 app.controller('LettersController',function ($scope,$http) {
     $scope.text = '';
     $scope.shomare = '';
-    $scope.title = '';
     $scope.date = '';
     // $scope.patient_id = '';
     $scope.res = '';
@@ -200,7 +199,7 @@ app.controller('LettersController',function ($scope,$http) {
         $http.post("http://localhost:8000/api/letters", {
             text: $scope.text,
             shomare: $scope.shomare,
-            title: $scope.title,
+
             date: $scope.date,
             // patient_id: $scope.patient_id
         })

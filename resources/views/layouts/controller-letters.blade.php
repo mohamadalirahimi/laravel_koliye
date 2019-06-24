@@ -1,35 +1,55 @@
 <div ng-controller="LettersController">
     <div class="row">
-        <form ng-submit="submit()" method="post">
-        {{csrf_field()}}
         <div class="col">
-    <div class="d-flex m-2 head">
-        <img src="" alt="">
-        <div>
-            <p>تست 1</p>
-            <p>تست 2</p>
-            <p>تست 3</p>
-        </div>
-        <div>
-            <p>پیوست : </p>
-            <p>تاریخ : </p>
-            <p>شماره : </p>
-        </div>
-    </div>
 
-    <div class="body">
-        <textarea name="" id="" cols="100" rows="500" placeholder="متن نامه خود را وارد کیند"></textarea>
-    </div>
+            <div class="card min-h-400 ">
+                <div class="card-header text-center"  style="background-color: #ededed !important;">
+                    ثبت نامه ها
 
-    <div class="foot">
-        <p>امضاء</p>
+                </div>
+
+
+
+                <form ng-submit="submit()" method="post">
+                    {{csrf_field()}}
+                    <div  class="d-flex mt-4 mr-4">
+                        <span  style="width:90px; display: inline-block;">پیوست: </span>
+                        <input class="form-control" type="text" ng-model="text"
+                               placeholder=" "  style="width: 300px;" required
+                        >
+                    </div>
+                    <br>
+
+                    <div class="d-flex  mr-4">
+                        <span  style="width: 90px;display: inline-block;">شماره: </span>
+                        <input  class="form-control" type="number" ng-model="shomare"
+                                placeholder=" "  style="width: 300px;" required
+                        >
+                    </div>
+                    <br>
+
+
+                    <div class="d-flex mr-4">
+                        <span style="width: 90px;display: inline-block;">تاریخ : </span>
+                        <input class="form-control" type="text" ng-model="date"
+                               placeholder=" "  style="width: 300px;" required
+                        >
+
+                    </div>
+                    <br>
+
+
+                    <div class="input-group-append">
+                        <button style="display: block;margin: 0 auto;width: 120px;background: darkgreen;"class="btn btn-primary mb-2" type="submit"
+                                id="button-addon2">ثبت
+                        </button>
+                    </div>
+
+
+                </form>
+
+
+            </div>
+        </div>
     </div>
 </div>
-
-
-      
-
-        </form>
-    </div>
-</div>
-

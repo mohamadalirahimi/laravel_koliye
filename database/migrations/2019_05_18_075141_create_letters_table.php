@@ -17,7 +17,7 @@ class CreateLettersTable extends Migration
             $table->Increments('id');
             $table->string('text');
             $table->integer('shomare');
-            $table->string('title');
+
             $table->integer('date');
 
             $table->integer('patient_id') ->unsigned();
