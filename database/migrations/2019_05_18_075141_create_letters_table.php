@@ -18,10 +18,9 @@ class CreateLettersTable extends Migration
             $table->string('text');
             $table->integer('shomare');
 
-            $table->integer('date');
+            $table->date('date');
 
-            $table->integer('patient_id') ->unsigned();
-            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

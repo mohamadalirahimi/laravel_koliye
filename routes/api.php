@@ -30,4 +30,4 @@ Route::post('supports', 'SupportController@store');
 Route::put('supports', 'SupportController@update');
 Route::delete('supports/{id}', 'SupportController@destroy');
 
-Route::post('letters','LetterController@store');
+Route::post('letters','LettersController@store');

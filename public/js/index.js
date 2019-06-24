@@ -194,7 +194,7 @@ app.controller('LettersController',function ($scope,$http) {
     $scope.date = '';
     // $scope.patient_id = '';
     $scope.res = '';
-    $scope.supports='';
+
     $scope.submit = function () {
         $http.post("http://localhost:8000/api/letters", {
             text: $scope.text,
