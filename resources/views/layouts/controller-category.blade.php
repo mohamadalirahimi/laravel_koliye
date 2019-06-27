@@ -90,6 +90,12 @@
                                                    placeholder="تاریخ پیوند"
                                                    aria-label="تاریخ پیوند">
                                         </div></td>
+                                    <td class="tg-0lax"> <div class="input-group mb-3">
+                                        <h6>بیمارستان پیوند:</h6>
+                                        <input type="text" ng-model="transplant_hospital" class="form-control"
+                                               placeholder="بیمارستان پیوند"
+                                               aria-label="بیمارستات پیوند">
+                                        </div></td>
                                 </tr>
                                 <tr>
                                     <td class="tg-0lax"> <div class="input-group mb-3">
@@ -98,6 +104,7 @@
                                                    placeholder="پزشک پیوند"
                                                    aria-label="پزشک پیوند">
                                         </div></td>
+
                                     <td class="tg-0lax"><div class="input-group mb-3">
                                             <h6>داروهای مصرفی:</h6>
                                             <input type="text" ng-model="drug" class="form-control"

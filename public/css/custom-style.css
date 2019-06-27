@@ -7,7 +7,15 @@
     url('../fonts/Vazir.ttf') format('truetype');
     font-weight: normal;
 }
+.form-control {
+    width: 50%;
+    margin: 15px auto;
+    display: block;
+}
 
+.form-control1 {
+    width: 50%;
+}
 @font-face {
     font-family: Vazir;
     src: url('../fonts/Vazir-Bold.eot');

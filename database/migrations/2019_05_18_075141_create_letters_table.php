@@ -15,10 +15,11 @@ class CreateLettersTable extends Migration
     {
         Schema::create('letters', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('text');
+            $table->string('attach');
             $table->integer('shomare');
 
             $table->date('date');
+            $table->text('textarea');
 
 
             $table->timestamps();

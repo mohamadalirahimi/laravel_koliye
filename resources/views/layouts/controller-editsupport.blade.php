@@ -54,7 +54,7 @@
 
                     <div>
                         <span style="width: 105px;display: inline-block;">تاریخ : </span>
-                        <input type="number" name="date" value="{{$support->date}}"
+                        <input type="text" name="date" value="{{$support->date}}"
                                placeholder="تاریخ را وارد کنید:"
                         >
 
