@@ -51,7 +51,7 @@
         @media print {
             body {
                 width: 700px;
-                height: 993px;
+                height: 994px;
             }
 
 
