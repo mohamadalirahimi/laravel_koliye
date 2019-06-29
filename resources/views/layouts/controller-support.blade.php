@@ -39,7 +39,7 @@
 
                     <div class="d-flex mr-4">
                     <span style="width: 90px;display: inline-block;">تاریخ : </span>
-                    <input class="form-control" type="date" ng-model="date"
+                    <input class="form-control" type="text" ng-model="date"
                            placeholder="تاریخ را وارد کنید"  style="width: 300px;" required
                     >
 

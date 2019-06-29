@@ -141,7 +141,7 @@ app.controller('RecordController', function ($scope, $http) {
     $scope.showData();
 
     $scope.edit = function () {
-        $http.put("http://localhost:8000/api/patients/", {
+        $http.put("http://localhost:8000/api/patients", {
             name: $scope.name,
             fathers_name: $scope.fathers_name,
             national_code: $scope.national_code,
@@ -252,6 +252,7 @@ app.controller('SupportController', function ($scope, $http) {
     $scope.patient_id = '';
     $scope.res = '';
     $scope.supports = '';
+    $scope.total = 0;
     $scope.submit = function () {
         $http.post("http://localhost:8000/api/supports", {
             helper: $scope.helper,
@@ -290,12 +291,24 @@ app.controller('SupportController', function ($scope, $http) {
                 }
             );
     };
+
+    $scope.getTotal = function() {
+
+
+
+        for(count=0;count<$scope.supports.length;count++){
+            $scope.total += parseInt($scope.supports[count].amount);
+        }
+
+    };
+
     $scope.getshowsupport = function () {
         $http.get("http://localhost:8000/api/supports")
             .then(
                 function successCallback(response) {
 
                     $scope.supports = response.data;
+                    $scope.getTotal();
                 },
                 function errorCallback(response) {
                     console.log("مشکلی در ارتباط با سرور پیش آمده است");
@@ -303,6 +316,7 @@ app.controller('SupportController', function ($scope, $http) {
             );
     };
     $scope.getshowsupport()
+
     $scope.delete = function (id) {
         $http.delete("http://localhost:8000/api/supports/" + id)
             .then(

@@ -60,5 +60,7 @@
         </tr>
         </tbody>
     </table>
+
+        <span class="total-amount">@{{ total }}</span>
     </div>
 </div>

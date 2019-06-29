@@ -17,7 +17,7 @@ Route::get('patients', 'RecordController@index');
 Route::get('patients/{id}', 'RecordController@show');
 Route::get('patients/{name}', 'RecordController@search');
 
-Route::post('patients', 'RecordController@store');
+Route::post('patiens', 'RecordController@store');
 Route::put('patients', 'SupportController@update');
 
 Route::delete('patients/{id}', 'RecordController@destroy');
