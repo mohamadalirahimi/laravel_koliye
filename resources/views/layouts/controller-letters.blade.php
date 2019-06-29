@@ -9,9 +9,7 @@
                 </div>
 
             
-                <form ng-submit="submit()" method="post">
-
-                    {{csrf_field()}}
+                <form ng-submit="submit()" >
                     <div  class="d-flex mt-4 mr-4">
 
                         <span  style="width:90px; display: inline-block;">پیوست: </span>
@@ -23,7 +21,7 @@
 
                     <div class="d-flex  mr-4">
                         <span  style="width: 90px;display: inline-block;">شماره: </span>
-                        <input  class="form-control" type="number" ng-model="shomare"
+                        <input  class="form-control" type="text" ng-model="shomare"
                                 placeholder=" "  style="width: 300px;" required
                         >
                     </div>
@@ -38,7 +36,7 @@
 
                     </div>
                     <br>
-                    <textarea class="form-control"  rows="10" cols="80" name="text" >متن را وارد کنید...</textarea>
+                    <textarea class="form-control" ng-model="text" rows="10" cols="80" name="text" >متن را وارد کنید...</textarea>
 
 
                     <div class="input-group-append">

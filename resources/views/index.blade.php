@@ -49,6 +49,9 @@
                                 <div class="container" ng-if="tabs['lettersTab'] == true">
                                     @include('layouts/controller-letters')
                                 </div>
+                                <div class="container" ng-if="tabs['showlettersTab'] == true">
+                                    @include('layouts/controller-showletters')
+                                </div>
 
                             </div>
                         </div>

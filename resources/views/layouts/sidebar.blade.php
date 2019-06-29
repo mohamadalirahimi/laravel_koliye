@@ -30,7 +30,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" ng-click="changeTab('showTab')" href="#">
-                            <i class='far fa-eye' style='font-size:24px'></i>
+                            <i class='far fa-eye' style='font-size:20px'></i>
                             <p>نمایش بیماران</p>
                         </a>
                     </li>
@@ -48,8 +48,14 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" ng-click="changeTab('lettersTab')" href="#">
-                            <i class="fas fa-hands-helping" style='font-size:21px'></i>
+                            <i class="far fa-envelope" style='font-size:21px'></i>
                             <p>نامه ها</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="changeTab('showlettersTab')" href="#">
+                            <i class="fas fa-envelope-open" style='font-size:21px'></i>
+                            <p>نمایش نامه ها</p>
                         </a>
                     </li>
 

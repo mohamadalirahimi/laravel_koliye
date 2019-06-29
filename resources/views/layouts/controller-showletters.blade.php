@@ -1,58 +1,50 @@
 <div ng-controller="LettersController">
-    <div class="row">
-        <div class="col">
 
-            <div class="card min-h-400 ">
-                <div class="card-header text-center"  style="background-color: #ededed !important;">
-                    ثبت نامه ها
+    <div class="card">
+        <div align="center" class="card-header" style="background-color: #ededed !important;">نمایش نامه ها</div>
+        <table class="table table-bordered table-responsive-md">
+            <tbody>
+            <thead class="thead-dark">
+            <tr>
 
-                </div>
+                <th scope="row">کد نامه</th>
+                <th>پیوست</th>
+                <th>شماره</th>
 
-            
-                <form ng-submit="submit()" method="post">
+                <th>تاریخ</th>
+                <th>متن</th>
 
-                    {{csrf_field()}}
-                    <div  class="d-flex mt-4 mr-4">
-
-                        <span  style="width:90px; display: inline-block;">پیوست: </span>
-                        <input class="form-control" type="text" ng-model="attach"
-                               placeholder=" "  style="width: 300px;" required
-                        >
-                    </div>
-                    <br>
-
-                    <div class="d-flex  mr-4">
-                        <span  style="width: 90px;display: inline-block;">شماره: </span>
-                        <input  class="form-control" type="number" ng-model="shomare"
-                                placeholder=" "  style="width: 300px;" required
-                        >
-                    </div>
-                    <br>
+                <th class="table-buttons">
+                    عملیات
+                </th>
+            </tr>
+            </thead>
+            <tr ng-repeat="letter in letters track by $index">
+                <th scope="row">@{{letter.id}}</th>
+                <td>@{{letter.attach}}</td>
+                <td>@{{letter.shomare}}</td>
+                <td>@{{letter.date}}</td>
+                <td>@{{letter.textarea}}</td>
 
 
-                    <div class="d-flex mr-4">
-                        <span style="width: 90px;display: inline-block;">تاریخ : </span>
-                        <input class="form-control" type="text" ng-model="date"
-                               placeholder=" "  style="width: 300px;" required
-                        >
-
-                    </div>
-                    <br>
-                    <textarea class="form-control"  rows="10" cols="80" name="text" >متن را وارد کنید...</textarea>
-
-
-                    <div class="input-group-append">
-                        <button style="display: block;margin: 0 auto;width: 120px;background: darkgreen;"class="btn btn-primary mb-2" type="submit"
-                                id="button-addon2">ثبت
+                <td class="table-buttons">
+                    <a target="_blank" href='/letter/print?id=@{{letter.id}}'>
+                        <button
+                                class="btn btn-primary btn-sm"
+                                title="مشاهده و پرینت"><i
+                                    class="fas fa-print"></i>
                         </button>
-                    </div>
+                    </a>
+                    <button confirmed-click="delete(letter.id)" ng-confirm-click="از حذف این مورد مطمئن هستید ؟"
+                            class="btn btn-outline-danger btn-sm"
+                            data-title="Delete" data-toggle="modal"
+                            data-target="#delete" title="حذف"><i
+                                class="fas fa-trash"></i>
+                    </button>
 
-
-                </form>
-                </div>
-
-
-            </div>
-        </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>

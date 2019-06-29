@@ -24,7 +24,8 @@ app.controller('MainController', function ($scope) {
         'editTab': false,
         'supportTab': false,
         'showsupportTab': false,
-        'lettersTab':false,
+        'lettersTab': false,
+        'showlettersTab': false,
     };
     $scope.changeTab = function (tab) {
         angular.forEach($scope.tabs, function (key, value) {
@@ -49,7 +50,7 @@ app.controller('RecordController', function ($scope, $http) {
     $scope.insurance_type = '';
     $scope.insurance = '';
     $scope.date_transplant = '';
-    $scope.transplant_hospital= '';
+    $scope.transplant_hospital = '';
     $scope.transplant_doctor = '';
     $scope.drug = '';
     $scope.home_adres = '';
@@ -62,37 +63,37 @@ app.controller('RecordController', function ($scope, $http) {
     $scope.patients = [];
     $scope.res = '';
     $scope.submit = function () {
-    $http.post("http://localhost:8000/api/patiens", {
-        name: $scope.name,
-        fathers_name: $scope.fathers_name,
-        national_code: $scope.national_code,
-        doctor: $scope.doctor,
-        id: $scope.id,
-        sickness_type: $scope.sickness_type,
-        insurance_type: $scope.insurance_type,
-        insurance: $scope.insurance,
-        date_transplant: $scope.date_transplant,
-        transplant_hospital: $scope.transplant_hospital,
-        transplant_doctor: $scope.transplant_doctor,
-        drug: $scope.drug,
-        home_adres: $scope.home_adres,
-        work_adres: $scope.work_adres,
-        home_phone: $scope.home_phone,
-        work_phone: $scope.work_phone,
-        cellphone: $scope.cellphone,
-        required_phone: $scope.required_phone,
-        account_number: $scope.account_number
-    })
-        .then(
-            function successCallback(response) {
-                alert('اطلاعات با موفقیت ثبت شد');
-                $window.location.href = "https://www.google.com";
-            },
-            function errorCallback(response) {
-                console.log( response.data );
-            }
-        );
-};
+        $http.post("http://localhost:8000/api/patiens", {
+            name: $scope.name,
+            fathers_name: $scope.fathers_name,
+            national_code: $scope.national_code,
+            doctor: $scope.doctor,
+            id: $scope.id,
+            sickness_type: $scope.sickness_type,
+            insurance_type: $scope.insurance_type,
+            insurance: $scope.insurance,
+            date_transplant: $scope.date_transplant,
+            transplant_hospital: $scope.transplant_hospital,
+            transplant_doctor: $scope.transplant_doctor,
+            drug: $scope.drug,
+            home_adres: $scope.home_adres,
+            work_adres: $scope.work_adres,
+            home_phone: $scope.home_phone,
+            work_phone: $scope.work_phone,
+            cellphone: $scope.cellphone,
+            required_phone: $scope.required_phone,
+            account_number: $scope.account_number
+        })
+            .then(
+                function successCallback(response) {
+                    alert('اطلاعات با موفقیت ثبت شد');
+                    $window.location.href = "https://www.google.com";
+                },
+                function errorCallback(response) {
+                    console.log(response.data);
+                }
+            );
+    };
     $scope.getData = function () {
         $http.get("http://localhost:8000/api/patients/")
             .then(
@@ -101,23 +102,22 @@ app.controller('RecordController', function ($scope, $http) {
 
                 },
                 function errorCallback(response) {
-                    console.log( response.data );
+                    console.log(response.data);
                 }
             );
     };
     $scope.getData();
 
 
-
     $scope.showData = function () {
-        $http.get("http://localhost:8000/api/patients/" +$scope.id)
+        $http.get("http://localhost:8000/api/patients/" + $scope.id)
             .then(
                 function successCallback(response) {
-                        $scope.name = response.data.name,
+                    $scope.name = response.data.name,
                         $scope.fathers_name = response.data.fathers_name,
                         $scope.national_code = response.data.national_code,
                         $scope.doctor = response.data.doctor,
-                        $scope.id= response.data.id,
+                        $scope.id = response.data.id,
                         $scope.sickness_type = response.data.sickness_type,
                         $scope.insurance_type = response.data.insurance_type,
                         $scope.insurance = response.data.insurance,
@@ -134,14 +134,14 @@ app.controller('RecordController', function ($scope, $http) {
                         $scope.account_numbe = response.data.account_numberr
                 },
                 function errorCallback(response) {
-                    console.log( response.data );
+                    console.log(response.data);
                 }
             );
     };
     $scope.showData();
 
     $scope.edit = function () {
-        $http.put("http://localhost:8000/api/patients/" , {
+        $http.put("http://localhost:8000/api/patients/", {
             name: $scope.name,
             fathers_name: $scope.fathers_name,
             national_code: $scope.national_code,
@@ -170,7 +170,7 @@ app.controller('RecordController', function ($scope, $http) {
 
                 },
                 function errorCallback(response) {
-                    console.log( response.data );
+                    console.log(response.data);
                 }
             );
     };
@@ -188,10 +188,12 @@ app.controller('RecordController', function ($scope, $http) {
     };
 });
 
-app.controller('LettersController',function ($scope,$http) {
+app.controller('LettersController', function ($scope, $http) {
     $scope.text = '';
     $scope.shomare = '';
+    $scope.attach= '';
     $scope.date = '';
+    $scope.letters = '';
     // $scope.patient_id = '';
     $scope.res = '';
 
@@ -199,9 +201,8 @@ app.controller('LettersController',function ($scope,$http) {
         $http.post("http://localhost:8000/api/letters", {
             text: $scope.text,
             shomare: $scope.shomare,
-
+            attach: $scope.attach,
             date: $scope.date,
-            // patient_id: $scope.patient_id
         })
             .then(
                 function successCallback(response) {
@@ -210,12 +211,39 @@ app.controller('LettersController',function ($scope,$http) {
 
                 },
                 function errorCallback(response) {
-                    console.log( response.data );
+                    console.log(response.data);
+                }
+            );
+    };
+    $scope.getshowletters = function () {
+        $http.get("http://localhost:8000/api/letters")
+            .then(
+                function successCallback(response) {
+
+                    $scope.letters = response.data;
+                },
+                function errorCallback(response) {
+                    console.log(response.data);
+                }
+            );
+    };
+
+
+    $scope.getshowletters()
+    $scope.delete = function (id) {
+        $http.delete("http://localhost:8000/api/letters/" + id)
+            .then(
+                function successCallback(response) {
+                    $scope.getshowletters()
+
+
+                },
+                function errorCallback(response) {
+                    console.log(response.data);
                 }
             );
     };
 });
-
 app.controller('SupportController', function ($scope, $http) {
     $scope.helper = '';
     $scope.amount = '';
@@ -223,7 +251,7 @@ app.controller('SupportController', function ($scope, $http) {
     $scope.date = '';
     $scope.patient_id = '';
     $scope.res = '';
-    $scope.supports='';
+    $scope.supports = '';
     $scope.submit = function () {
         $http.post("http://localhost:8000/api/supports", {
             helper: $scope.helper,
@@ -239,7 +267,7 @@ app.controller('SupportController', function ($scope, $http) {
 
                 },
                 function errorCallback(response) {
-                    console.log( response.data );
+                    console.log(response.data);
                 }
             );
     };
@@ -258,7 +286,7 @@ app.controller('SupportController', function ($scope, $http) {
 
                 },
                 function errorCallback(response) {
-                    console.log( response.data );
+                    console.log(response.data);
                 }
             );
     };

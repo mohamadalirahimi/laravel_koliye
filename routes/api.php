@@ -17,7 +17,7 @@ Route::get('patients', 'RecordController@index');
 Route::get('patients/{id}', 'RecordController@show');
 Route::get('patients/{name}', 'RecordController@search');
 
-Route::post('patiens', 'RecordController@store');
+Route::post('patients', 'RecordController@store');
 Route::put('patients', 'SupportController@update');
 
 Route::delete('patients/{id}', 'RecordController@destroy');
@@ -31,3 +31,5 @@ Route::put('supports', 'SupportController@update');
 Route::delete('supports/{id}', 'SupportController@destroy');
 
 Route::post('letters','LettersController@store');
+Route::get('letters', 'LettersController@index');
+Route::delete('letters/{id}', 'LettersController@destroy');

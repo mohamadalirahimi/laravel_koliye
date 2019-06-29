@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('support', 'SupportController');
-Route::resource('letters' , 'lettersController');
+Route::resource('letters' , 'LettersController');
+Route::get('letter/print' , 'LettersController@print');
