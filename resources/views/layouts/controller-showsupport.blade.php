@@ -59,8 +59,16 @@
             </td>
         </tr>
         </tbody>
+            <tfoot>
+            <tr>
+                <th  colspan="3">مبلغ کل : </th>
+                <td class="total-amount"> @{{ total }} </td>
+            </tr>
+            </tfoot>
     </table>
 
-        <span class="total-amount">@{{ total }}</span>
+        
+
+
     </div>
 </div>
