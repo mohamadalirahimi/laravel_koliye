@@ -13,5 +13,9 @@ class letter extends Model
         return $this->belongsTo('App\Patient');
     }
 
+    public  function getDateAttribute($value)
+    {
+        return Verta::instance($value)->format('Y/n/j');
+    }
 
 }
